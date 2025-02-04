@@ -3,10 +3,12 @@ import json
 from telethon import TelegramClient, events
 from telethon.tl.custom import Button
 import requests
+from dotenv import load_dotenv
 
-Apiid = "YOUR_API_ID"
-ApiHash = "YOUR_API_HASH"
-Token = "YOUR_BOT_TOKEN"
+load_dotenv()
+Apiid = os.getenv("API_ID")
+ApiHash = os.getenv("API_HASH")
+Token = os.getenv("BOT_TOKEN")
 client = TelegramClient('session', Apiid, ApiHash).start(bot_token=Token)
 
 def ToCatBox(Path):
